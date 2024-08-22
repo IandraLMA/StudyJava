@@ -1,20 +1,14 @@
 package Classes;
 
-import java.util.Scanner;
+
+import enumeration.OpcoesCategoriaLivro;
 
 public class Livro {
+
+    private OpcoesCategoriaLivro opcoesCategoriaLivro;
     private String titulo;
     private String autor;
     private String nacionalidade;
-
-    public String getNacionalidade() {
-        return nacionalidade;
-    }
-
-    public void setNacionalidade(String nacionalidade) {
-        this.nacionalidade = nacionalidade;
-    }
-
     private int pag;
     private double preco;
 
@@ -24,6 +18,14 @@ public class Livro {
         this.nacionalidade="";
         this.pag=0;
         this.preco=0.0;
+
+    }
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
     }
 
     public String getTitulo(){
@@ -56,5 +58,13 @@ public class Livro {
 
     public void setTitulo(String titulo){
         this.titulo=titulo;
+    }
+
+    public OpcoesCategoriaLivro getOpcoesCategoriaLivro() {
+        return opcoesCategoriaLivro;
+    }
+
+    public void setOpcoesCategoriaLivro(OpcoesCategoriaLivro opcoesCategoriaLivro) {
+        this.opcoesCategoriaLivro = opcoesCategoriaLivro;
     }
 }

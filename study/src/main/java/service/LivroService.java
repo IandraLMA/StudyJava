@@ -1,6 +1,7 @@
 package service;
 
 import Classes.Livro;
+import enumeration.OpcoesCategoriaLivro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +24,18 @@ public class LivroService {
         livro.setPag(leitor.nextInt());
         System.out.println("Informe o preço:");
         livro.setPreco(leitor.nextDouble());
+        System.out.println("Informe a categoria do livro:\n" );
+        for(OpcoesCategoriaLivro op: OpcoesCategoriaLivro.values()){
+            System.out.println(op.getNumeroCategoriaLivro() + "-"+ op.getCategoriaLivro());
+        }
+
+
+        livro.setOpcoesCategoriaLivro(OpcoesCategoriaLivro.obterPorKeyNumero(leitor.nextInt()));
+        
+
         return livro;
     }
+
 
 
     public void imprimir(Livro livro) {
@@ -33,6 +44,7 @@ public class LivroService {
         System.out.println("Nacionalidade:" + livro.getNacionalidade());
         System.out.println("Páginas:" + livro.getPag());
         System.out.println("Preço" + livro.getPreco());
+        System.out.println("Categoria:"+livro.getOpcoesCategoriaLivro().getCategoriaLivro());
     }
 
     public void removerLivro(List<Livro> lista) {
